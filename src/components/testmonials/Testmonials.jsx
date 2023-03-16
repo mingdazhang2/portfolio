@@ -3,6 +3,6 @@ import "./testmonials.scss"
 
 export const Testmonials = () => {
   return (
-    <div className='testmonials'>Testmonials</div>
+    <div className='testmonials' id='testmonials'>Testmonials</div>
   )
 }
