@@ -1,21 +1,21 @@
 .intro{
     background-color: white;
     display: flex;
-
+    height: calc(100vh - 70px);
     .left{
         flex:.5;
         overflow: hidden;
         display: flex;
         align-items: flex-end;
         .imgContainer{
-            width: 700px;
-            height: 700px;
-            background-color: crimson;
+            //width: 700px;
+            height: 500px;
+            background-color: #009688;
             border-radius: 50%;
-            display: flex;
+            //display: flex;
             // align-items: flex-end;
-            justify-content: center;
-            float: right;
+            //justify-content: center;
+            //float: right;
 
             img{
                 height: 100%;

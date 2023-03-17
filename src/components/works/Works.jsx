@@ -33,34 +33,52 @@ export const Works = () => {
     },
   ];
   const handeClick = (direction) => {
-    direction === "left" ?setCurrentSlider(currentSlider>0 ? currentSlider-1:data.length - 1) :
-    setCurrentSlider(currentSlider<data.length - 1? currentSlider+1:0)
+    direction === "left" ?setCurrentSlider(currentSlider>0 ? currentSlider-1:0) :
+    setCurrentSlider(currentSlider<data.length - 1? currentSlider+1:data.length - 1)
   }
   return (
-    <div className='works' id='works'>
-      <div className="slider" style={{transform:`translateX(-${currentSlider * 100}vw)`}}>
-        {data.map(d=>(
-          <div className="container">
-          <div className="item">
-            <div className="left">
-              <div className="leftContainer">
-                <div className="imgContainer">
-                  <img src={d.icon} alt="" />
+    <div className="works" id="works">
+      <div className='h1'>Works</div>
+      <div className="sliderContainer">
+        <div
+          className="slider"
+          style={{ transform: `translateX(-${currentSlider * 100}vw)` }}
+        >
+          {data.map((d, index) => (
+            <div className={index===currentSlider? "current container":"container"} key={d.id}>
+              <div className="item">
+                <div className="left">
+                  <div className="leftContainer">
+                    <div className="imgContainer">
+                      <img src={d.icon} alt="" />
+                    </div>
+                    <h2>{d.title}</h2>
+                    <p>{d.desc}</p>
+                    <span>Projects</span>
+                  </div>
                 </div>
-                <h2>{d.title}</h2>
-                <p>{d.desc}</p>
-                <span>Projects</span>
+                <div className="right">
+                  <img src={d.img} alt="" />
+                </div>
               </div>
             </div>
-            <div className="right">
-              <img src={d.img} alt="" />
-            </div>
-          </div>
+          ))}
         </div>
-        ))}
+        <img
+          src="assets/arrow.png"
+          className="arrow left"
+          alt=""
+          onClick={() => handeClick("left")}
+          style={{display: currentSlider<=0? "none":"block"}}
+        />
+        <img
+          src="assets/arrow.png"
+          className="arrow right"
+          alt=""
+          onClick={() => handeClick("right")}
+          style={{display: currentSlider>=data.length-1? "none":"block"}}
+        />
       </div>
-      <img src="assets/arrow.png" className='arrow left' alt="" onClick={()=>handeClick("left")}/>
-      <img src="assets/arrow.png" className='arrow right' alt="" onClick={()=>handeClick("right")}/>
     </div>
-  )
+  );
 }
