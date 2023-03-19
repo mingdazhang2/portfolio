@@ -1,7 +1,7 @@
 import './app.scss';
 import { Contact } from './components/contact/Contact';
 import { Topbar } from './components/topbar/Topbar';
-import { Testimonials } from './components/testimonials/Testimonials';
+import  Testimonials  from './components/testimonials/Testimonials';
 import { Portfolio } from './components/portfolio/Portfolio';
 import { Intro } from './components/intro/Intro';
 import { Menu } from './components/menu/Menu';

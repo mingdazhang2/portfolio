@@ -9,7 +9,8 @@ export const Intro = () => {
     init(textRef.current,{
       showCursor:true,
       backDelay:1500,
-      strings:["Developer","Team member",],
+      disableBackTyping:true,
+      strings:["Web Developer"],
     })
   },[])
 
@@ -17,7 +18,7 @@ export const Intro = () => {
     <div className='intro' id="intro">
       <div className="left">
         <div className="imgContainer">
-          <img src="assets/man.png" alt="" />
+          <img src="assets/intro.png" alt="" />
         </div>
       </div>
       <div className="right">
